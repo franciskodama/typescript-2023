@@ -1,16 +1,18 @@
-import express, { Request, Response, NextFunction } from 'express';
-import { json } from 'body-parser';
+let appId = 'abc';
+const button = document.querySelector('button')!;
 
-import todoRoutes from './routes/todos';
+function add(n1: number, n2: number) {
+  if (n1 + n2 > 0) {
+    return n1 + n2;
+  }
+  return;
+}
 
-const app = express();
-
-app.use(json());
-
-app.use('/todos', todoRoutes);
-
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  res.status(500).json({ message: err.message });
-});
-
-app.listen(3000);
+function clickHandler(message: string) {
+  // let userName = 'Max';
+  console.log('Clicked! ' + message);
+}
+// a comment
+if (button) {
+  button.addEventListener('click', clickHandler.bind(null, "You're welcome!"));
+}
