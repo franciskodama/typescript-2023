@@ -22,6 +22,8 @@ abstract class Department {
     this.employees.push(employee);
   }
 
+  //  LEt's test it
+
   printEmployeeInformation() {
     console.log(this.employees.length);
     console.log(this.employees);
